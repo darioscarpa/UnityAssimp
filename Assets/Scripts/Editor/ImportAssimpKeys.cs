@@ -30,23 +30,6 @@ public static class ImportAssimpKeys {
         //  streamWriter.WriteLine("LOG:" + msg);
     }
     
-    public class AssimpJoint {
-        public string parentName;
-        public string Name;
-        public string Path;
-        public Vector3 Position;
-        public Quaternion Orientation;
-        public AssimpJoint parent;
-        public Transform transform;
-        
-        public AssimpJoint() {
-            Name = "";
-            parentName = "";
-            parent = null;
-            Path = "";
-        }
-    }
-
     private static void readMesh(string path, string filename, string texturepath) {
         string importingAssetsDir;
 
