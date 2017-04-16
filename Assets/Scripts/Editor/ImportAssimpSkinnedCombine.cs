@@ -301,20 +301,7 @@ namespace UnityAssimp {
 
                         string texturename = path + "/" + fname;
 
-                        Texture2D tex = null;
-                        if (File.Exists(texturename)) {
-                            tex = (Texture2D)AssetDatabase.LoadAssetAtPath(texturename, typeof(Texture2D));
-                        } else if (File.Exists(texturename + ".PNG")) {
-                            tex = (Texture2D)AssetDatabase.LoadAssetAtPath(texturename + ".PNG", typeof(Texture2D));
-                        } else if (File.Exists(texturename + ".JPG")) {
-                            tex = (Texture2D)AssetDatabase.LoadAssetAtPath(texturename + ".JPG", typeof(Texture2D));
-                        } else if (File.Exists(texturename + ".BMP")) {
-                            tex = (Texture2D)AssetDatabase.LoadAssetAtPath(texturename + ".BMP", typeof(Texture2D));
-                        } else if (File.Exists(texturename + ".TGA")) {
-                            tex = (Texture2D)AssetDatabase.LoadAssetAtPath(texturename + ".TGA", typeof(Texture2D));
-                        } else if (File.Exists(texturename + ".DDS")) {
-                            tex = (Texture2D)AssetDatabase.LoadAssetAtPath(texturename + ".DDS", typeof(Texture2D));
-                        }
+                        Texture2D tex = Utils.loadTex(texturename);                        
 
                         if (tex != null) {
                             string p = AssetDatabase.GetAssetPath(tex);
